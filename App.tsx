@@ -25,6 +25,10 @@ export default function App() {
     setOutput('');
   };
 
+  const ligne1: string[] = ["7", "8", "9", "/"],
+    ligne2: string[] = ["4", "5", "6", "*"],
+    ligne3: string[] = ["1", "2", "3", "-"];
+
   return (
     <View style={styles.container}>
       <View style={styles.containerBefore} />
@@ -43,48 +47,30 @@ export default function App() {
         <View style={styles.containerSectionBefore} />
         <View style={styles.containerSectionButton}>
           <View style={styles.containerButton}>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('7')}>
-              <Text style={styles.textButton}>7</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('8')}>
-              <Text style={styles.textButton}>8</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('9')}>
-              <Text style={styles.textButton}>9</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('/')}>
-              <Text style={styles.textButton}>/</Text>
-            </TouchableOpacity>
+            { ligne1.map((value: string) => (
+                <TouchableOpacity style={styles.button} onPress={() => pressButton(value)}>
+                  <Text style={styles.textButton}>{value}</Text>
+                </TouchableOpacity>
+              )
+            ) }
           </View>
 
           <View style={styles.containerButton}>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('4')}>
-              <Text style={styles.textButton}>4</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('5')}>
-              <Text style={styles.textButton}>5</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('6')}>
-              <Text style={styles.textButton}>6</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('*')}>
-              <Text style={styles.textButton}>*</Text>
-            </TouchableOpacity>
+            { ligne2.map((value: string) => (
+                <TouchableOpacity style={styles.button} onPress={() => pressButton(value)}>
+                  <Text style={styles.textButton}>{value}</Text>
+                </TouchableOpacity>
+              )
+            ) }
           </View>
 
           <View style={styles.containerButton}>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('1')}>
-              <Text style={styles.textButton}>1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('2')}>
-              <Text style={styles.textButton}>2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('3')}>
-              <Text style={styles.textButton}>3</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => pressButton('-')}>
-              <Text style={styles.textButton}>-</Text>
-            </TouchableOpacity>
+            { ligne3.map((value: string) => (
+                  <TouchableOpacity style={styles.button} onPress={() => pressButton(value)}>
+                    <Text style={styles.textButton}>{value}</Text>
+                  </TouchableOpacity>
+                )
+              ) }
           </View>
 
           <View style={styles.containerButton}>
